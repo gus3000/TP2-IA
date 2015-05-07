@@ -7,32 +7,30 @@ import java.util.Properties;
 public class Grid
 {
 	private static Grid instance = null;
-	
-	
-	private Grid() throws IOException
+
+	int grid[][];
+
+	private Grid()
 	{
-		Properties prop = new Properties();
-		String propFileName = "system.properties";
-		InputStream inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
-		
-		if(inputStream != null)
-		{
-			prop.load(inputStream);
-		}
+		grid = new int[Constants.WIDTH][Constants.HEIGHT];
 	}
 	
+	public void addAgent(Agent a)
+	{
+		grid[a.getCurrentX()][a.getCurrentY()] = a.ID;
+	}
+
+	public boolean isWinState()
+	{
+		return false; // PHOQUE YOU
+	}
+
 	public Grid getInstance()
 	{
-		if(instance == null)
+		if (instance == null)
 		{
-			try
-			{
-				instance = new Grid();
-			} catch (IOException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			instance = new Grid();
+
 		}
 		return instance;
 	}
