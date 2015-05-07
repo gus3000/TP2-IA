@@ -34,5 +34,4 @@ public class LetterBox {
 	public void deleteMessages(int agent){
 		letterBox.put(agent, new ArrayList<Message>());
 	}
-
 }

@@ -1,10 +1,14 @@
 package multiagent;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
+
 import multiagent.LetterBox;
 
 public class Agent implements Runnable
 {
+	private static Hashtable<Integer, Agent> allAgents = new Hashtable<>(Constants.NB_AGENTS);
+	
 	private static int LASTID = -1;
 	public final int ID;
 
@@ -26,6 +30,8 @@ public class Agent implements Runnable
 		this.goalY = goalY;
 
 		letterBox = LetterBox.getInstance();
+		
+		allAgents.put(ID, this);
 	}
 
 	@Override
@@ -39,7 +45,7 @@ public class Agent implements Runnable
 			
 			//Traitement des messages
 			
-			//Mis a jour des coords
+			//Mise a jour des coords
 			
 			//Envoi de messages
 		}
