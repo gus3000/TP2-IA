@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class LetterBox {
 
-	HashMap<Integer, ArrayList<Message>> letterBox;
+	private HashMap<Integer, ArrayList<Message>> letterBox;
 
 	public LetterBox(int numberOfAgents) {
 		for(int i=0; i<numberOfAgents; i++){
