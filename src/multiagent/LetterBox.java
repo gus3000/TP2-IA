@@ -10,6 +10,7 @@ public class LetterBox {
 	private HashMap<Integer, ArrayList<Message>> letterBox;
 
 	private LetterBox(int numberOfAgents) {
+		letterBox = new HashMap<Integer, ArrayList<Message>>();
 		for(int i=0; i<numberOfAgents; i++){
 			letterBox.put(i, new ArrayList<Message>());
 		}
@@ -17,8 +18,7 @@ public class LetterBox {
 	
 	public static LetterBox getInstance(){
 		if(instance == null){
-			//TODO Changer pour aller lire chez les constantes
-			instance = new LetterBox(7);
+			instance = new LetterBox(Constants.NB_AGENTS);
 		}
 		return instance;
 	}

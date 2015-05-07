@@ -36,7 +36,31 @@ public class Agent implements Runnable
 			messages = letterBox.getMessages(ID);
 			letterBox.deleteMessages(ID);
 			
-			//Lecture des messages
+			//Traitement des messages
+			
+			//Mis a jour des coords
+			
+			//Envoi de messages
 		}
+	}
+
+	public boolean atGoal(){
+		return (currentX == goalX) && (currentY == goalY);
+	}
+	
+	public int getCurrentX() {
+		return currentX;
+	}
+
+	public int getCurrentY() {
+		return currentY;
+	}
+
+	public int getGoalX() {
+		return goalX;
+	}
+
+	public int getGoalY() {
+		return goalY;
 	}
 }
