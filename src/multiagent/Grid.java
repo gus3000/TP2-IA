@@ -1,22 +1,39 @@
 package multiagent;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 public class Grid
 {
 	private static Grid instance = null;
 	
-	private static final int WIDTH = 5;
-	private static final int HEIGHT = 5;
 	
-	
-	private Grid()
+	private Grid() throws IOException
 	{
+		Properties prop = new Properties();
+		String propFileName = "system.properties";
+		InputStream inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
 		
+		if(inputStream != null)
+		{
+			prop.load(inputStream);
+		}
 	}
 	
 	public Grid getInstance()
 	{
 		if(instance == null)
-			instance = new Grid();
+		{
+			try
+			{
+				instance = new Grid();
+			} catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		return instance;
 	}
 }
