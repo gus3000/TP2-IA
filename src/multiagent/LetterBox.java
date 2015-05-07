@@ -1,16 +1,16 @@
 package multiagent;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Hashtable;
 
 public class LetterBox {
 
 	private static LetterBox instance;
 	
-	private HashMap<Integer, ArrayList<Message>> letterBox;
+	private Hashtable<Integer, ArrayList<Message>> letterBox;
 
 	private LetterBox(int numberOfAgents) {
-		letterBox = new HashMap<Integer, ArrayList<Message>>();
+		letterBox = new Hashtable<Integer, ArrayList<Message>>();
 		for(int i=0; i<numberOfAgents; i++){
 			letterBox.put(i, new ArrayList<Message>());
 		}
