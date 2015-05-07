@@ -11,14 +11,7 @@ public class Grid
 	
 	private Grid() throws IOException
 	{
-		Properties prop = new Properties();
-		String propFileName = "system.properties";
-		InputStream inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
 		
-		if(inputStream != null)
-		{
-			prop.load(inputStream);
-		}
 	}
 	
 	public Grid getInstance()
