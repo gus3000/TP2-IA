@@ -13,7 +13,7 @@ public class Agent implements Runnable
 
 	private int goalX;
 	private int goalY;
-	
+
 	private ArrayList<Message> messages;
 	private LetterBox letterBox;
 
@@ -24,19 +24,31 @@ public class Agent implements Runnable
 		this.currentY = currentY;
 		this.goalX = goalX;
 		this.goalY = goalY;
-		
+
 		letterBox = LetterBox.getInstance();
 	}
 
+	public int getCurrentX()
+	{
+		return currentX;
+	}
+
+	public int getCurrentY()
+	{
+		return currentY;
+	}
+
 	@Override
-	public void run() {
-		//Boucle principal
-		//TODO changer en while(puzzle non terminé)
-		while(currentX != goalX & currentY != goalY){
+	public void run()
+	{
+		// Boucle principal
+		// TODO changer en while(puzzle non terminé)
+		while (currentX != goalX & currentY != goalY)
+		{
 			messages = letterBox.getMessages(ID);
 			letterBox.deleteMessages(ID);
-			
-			//Lecture des messages
+
+			// Lecture des messages
 		}
 	}
 }
